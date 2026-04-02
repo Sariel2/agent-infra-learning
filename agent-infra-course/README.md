@@ -1,23 +1,29 @@
 # Agent Infra Learning Course
 
-这是一个面向后端工程师的 `6 周 Python-first Agent Infra 冲刺课程`。课程现在已经升级成重度教学版：每个模块不只提供阅读材料，还提供按步骤执行的学习说明、练习题、可运行示例，以及一个综合本模块能力的服务框架。
+这是一个面向后端工程师的 `6 周 Python-first Agent Infra 讲义型教程`。这套教程现在的目标不是把你“引导到外部网页自己学”，而是让你主要通过课程本身的讲义、代码导读、示例和综合服务把知识学透；外部链接只保留为出处和延伸阅读。
 
-## 课程目标
-- 用 6 周掌握 Agent Infra 的工程主线
-- 每个模块都留下可运行代码而不是只看文档
-- 最后形成一个可用于转型和面试展示的资产包
+## 这套教程怎么学
+每个模块都按同一条路径推进：
+1. 先读 `README.md` 和 `mindmap.md`
+2. 再读 `study-map.md`
+3. 按顺序读 `resources/01-*` 到 `resources/05-*`
+4. 跟着 `steps.md` 去看具体 example 和 module-service 文件
+5. 运行 example，做小改动，重新验证
+6. 完成本模块 `module-service/`
+7. 做 `exercises.md` 和 `review.md`
 
-## 使用顺序
-1. 阅读 [mindmap.md](/Users/tianqingxiang/Desktop/work/project/github/agent-infra-learning/agent-infra-learning/agent-infra-course/mindmap.md)
-2. 进入模块 `README.md`
-3. 阅读模块 `resources/`
-4. 按 `steps.md` 跑 `examples/`
-5. 完成 `module-service/`
-6. 做 `exercises.md`
-7. 用 `review.md` 做复盘
-8. 最后完成 `assessment/`
+## 每个模块里的关键文件
+- `study-map.md`：本模块的总学习地图，告诉你先学什么、后学什么
+- `steps.md`：逐步执行指南，精确关联资源章节、代码文件和运行命令
+- `resources/01-concepts-and-principles.md`：概念、边界、设计原则
+- `resources/02-deep-dive.md`：细节、原理、调用链、失败模式
+- `resources/03-code-reading-guide.md`：应该先看哪些代码文件，以及每段代码在讲什么
+- `resources/04-sources.md`：原始来源链接和用途说明
+- `resources/05-common-mistakes.md`：常见误区、症状、修复思路
+- `examples/`：知识点级别的可运行示例
+- `module-service/`：综合本模块能力的最小服务框架
 
-## 课程结构
+## 模块列表
 - [00-overview](./00-overview/README.md)
 - [01-python-agent-foundations](./01-python-agent-foundations/README.md)
 - [02-single-agent-with-tools](./02-single-agent-with-tools/README.md)
@@ -27,21 +33,8 @@
 - [06-career-transition-and-interview](./06-career-transition-and-interview/README.md)
 - [assessment](./assessment/README.md)
 
-## 模块内固定结构
-- `README.md`：目标、范围、完成标准
-- `tasks.md`：周/天级别节奏安排
-- `steps.md`：一步一步怎么做
-- `project.md`：本模块综合项目说明
-- `review.md`：复盘与自查
-- `exercises.md`：本模块练习题
-- `mindmap.md`：模块思维导图
-- `resources/`：资料地图、重点、阅读说明、概念总结
-- `examples/`：知识点级别的可运行示例
-- `module-service/`：覆盖模块核心能力的综合服务框架
-
-## 时间建议
-- 每周 `8-12 小时`
-- `2 小时` 读资料和总结
-- `4-6 小时` 跑示例和做服务
-- `1-2 小时` 做练习和复盘
-- `1-2 小时` 记录失败案例与优化点
+## 学习原则
+- 外部链接是出处，不是主学习入口。
+- 每学一个概念，都要回到本模块代码里看它如何落地。
+- 每个模块都至少保留 1 条失败案例和 1 条改进思路。
+- 每个综合服务都要被你亲手运行、修改、验证一次。

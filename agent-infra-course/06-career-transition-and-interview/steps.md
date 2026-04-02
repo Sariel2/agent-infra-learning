@@ -1,37 +1,50 @@
 # 06 转型、简历与面试 逐步执行说明
 
-## Step 1：整理项目资产
-- 要做什么：整理项目资产
-- 为什么现在做：转型表达必须建立在真实资产上。
-- 具体动作：收集系统图、失败案例、性能对比、README 链接和 trace 截图。
-- 产出物：项目资产清单
-- 完成判断：你能迅速找到证明自己做过什么的证据。
-- 常见卡点：只有代码，没有讲解材料。
-- 如果卡住先检查：检查是否保存了图和评测结果。
+下面的步骤不是抽象提醒，而是本模块真正的学习顺序。每一步都对应具体讲义文件、代码文件和命令。
 
-## Step 2：运行 Project Story 示例
-- 要做什么：运行 Project Story 示例
-- 为什么现在做：学习把工程事实转成有价值的表达。
-- 具体动作：运行 examples/01-project-story-api，生成业务版和 infra 版描述。
-- 产出物：两版项目描述
-- 完成判断：你能区分做了什么和为什么有价值。
-- 常见卡点：只会堆技术名词。
-- 如果卡住先检查：检查描述里是否有目标、方法、结果和问题。
+## Step 1：先建立概念框架
+- 先读 [resources/01-concepts-and-principles.md](./resources/01-concepts-and-principles.md)
+- 再读 [resources/05-common-mistakes.md](./resources/05-common-mistakes.md)
+- 目标：先知道这个模块解决什么问题、边界在哪里、最容易错在哪里。
+- 完成标准：你能不用看代码先讲清这个模块的核心概念。
 
-## Step 3：运行 Interview QA 示例
-- 要做什么：运行 Interview QA 示例
-- 为什么现在做：转型不仅靠项目，也靠表达结构。
-- 具体动作：运行 examples/02-interview-qa-pack，练习常见问题回答。
-- 产出物：高频问答稿
-- 完成判断：你能稳定回答 workflow、RAG、tool、eval 相关问题。
-- 常见卡点：回答泛泛，没有实例。
-- 如果卡住先检查：检查每个答案是否都带案例。
+## Step 2：读细节和原理
+- 读 [resources/02-deep-dive.md](./resources/02-deep-dive.md)
+- 参考 [resources/04-sources.md](./resources/04-sources.md) 中的出处链接，但不要跳出去替代教程本身
+- 目标：弄清楚这个模块背后的数据流、设计动机和失败模式。
+- 完成标准：你能解释“为什么要这样设计”，而不只是“我会用”。
 
-## Step 4：完成 showcase-pack 服务
-- 要做什么：完成 showcase-pack 服务
-- 为什么现在做：把所有资产打成可展示包。
-- 具体动作：启动 module-service，生成项目摘要、简历 bullet 和问答库。
-- 产出物：showcase-pack 服务
-- 完成判断：你能拿它做自我介绍和项目讲解。
-- 常见卡点：材料分散且风格不统一。
-- 如果卡住先检查：检查是否围绕一个主项目主线组织内容。
+## Step 3：学习 example `01-project-story-api`
+- 先读 [examples/01-project-story-api/README.md](./examples/01-project-story-api/README.md)
+- 再读 [examples/01-project-story-api/walkthrough.md](./examples/01-project-story-api/walkthrough.md)
+- 打开 [examples/01-project-story-api/app/main.py](./examples/01-project-story-api/app/main.py)：先看 `ProjectFacts` 与 `build_story()`，理解“项目讲述”本质上是对事实进行结构化。
+- 打开 [examples/01-project-story-api/tests/test_main.py](./examples/01-project-story-api/tests/test_main.py)：看测试如何确保输出至少包含项目名和核心要素。
+- 建议命令：
+  - `python -m app.main`
+  - `pytest`
+- 完成标准：你至少做 1 处小改动，并能解释行为变化。
+
+## Step 4：学习 example `02-interview-qa-pack`
+- 先读 [examples/02-interview-qa-pack/README.md](./examples/02-interview-qa-pack/README.md)
+- 再读 [examples/02-interview-qa-pack/walkthrough.md](./examples/02-interview-qa-pack/walkthrough.md)
+- 打开 [examples/02-interview-qa-pack/app/main.py](./examples/02-interview-qa-pack/app/main.py)：先看 `FAQ` 和 `answer_question()`。这里不是在追求生成式回答，而是在训练“稳定回答骨架”。
+- 打开 [examples/02-interview-qa-pack/tests/test_main.py](./examples/02-interview-qa-pack/tests/test_main.py)：看未知问题的默认回答结构为什么仍然重要。
+- 建议命令：
+  - `python -m app.main`
+  - `pytest`
+- 完成标准：你至少做 1 处小改动，并能解释行为变化。
+
+## Step 5：进入综合服务 `showcase-pack`
+- 先读 [module-service/README.md](./module-service/README.md)
+- 打开 [module-service/app/service.py](./module-service/app/service.py)：先看 `build_story()` 与 `answer()`，理解“表达”在这里也被当成一种可结构化的工程产物。
+- 打开 [module-service/app/main.py](./module-service/app/main.py)：再看 `/story` 和 `/qa` 如何分别承接不同表达任务。
+- 打开 [module-service/tests/test_main.py](./module-service/tests/test_main.py)：最后看测试如何保护输出骨架。
+- 建议命令：
+  - `uvicorn app.main:app --reload`
+  - `pytest`
+- 完成标准：你能解释这个综合服务如何把本模块知识点串起来。
+
+## Step 6：练习与复盘
+- 做 [exercises.md](./exercises.md)
+- 用 [review.md](./review.md) 做复盘
+- 完成标准：至少写下 1 条失败案例、1 条修复思路、1 条你现在能讲清楚的判断原则。

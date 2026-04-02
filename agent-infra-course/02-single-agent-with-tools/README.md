@@ -1,25 +1,15 @@
 # 02 单 Agent 与 Tools
 
-这一阶段开始进入真正的 Agent 行为。关键不是“让模型会调用工具”这么简单，而是让整个 `tool selection -> parameter generation -> execution -> error recovery` 变得可控。
+这个模块的目标是：理解 tool schema、agent loop、执行轨迹与失败恢复的最小工程实现。
 
-## 阶段目标
-- 跑通单 Agent 的工具调用链路
-- 设计稳定的 tool schema
-- 给 Agent 加上最小失败恢复能力
+## 你应该怎么学
+- 先看 [study-map.md](./study-map.md)
+- 再按 [steps.md](./steps.md) 推进
+- 学习时把 [resources/](./resources/README.md) 当成主讲义
+- 把 [examples/](./examples/README.md) 当成知识点实验室
+- 把 [module-service/README.md](./module-service/README.md) 当成综合实战入口
 
-## 核心主题
-- function calling
-- tool schema
-- agent loop
-- retry 和 fallback
-- 执行轨迹记录
-
-## 阶段产出
-- 一个 `support-agent`
-- 3 个以上工具
-- 一份工具调用失败案例集
-
-## 完成标准
-- Agent 能按任务自动选工具
-- 工具错误不会直接把流程打死
-- 你能解释工具调用失败通常出在哪一层
+## 这一模块学完后你应该能做到什么
+- 不只知道概念，还能解释原理、边界和失败模式
+- 不只看懂示例，还能指出哪段代码在体现哪个知识点
+- 不只跑通 example，还能完成本模块综合服务

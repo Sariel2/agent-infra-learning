@@ -1,26 +1,15 @@
 # 05 Agent 原理与架构
 
-前四周你已经做出了系统，现在要把“做过”提升为“理解过”。这一阶段的价值在于形成稳定心智模型，这会直接影响你后续系统设计、框架选型和面试表达。
+这个模块的目标是：把前四个模块的实践提升为稳定的模式认知和架构判断能力。
 
-## 阶段目标
-- 把工程实践映射到 agent 理论模式
-- 学会用架构视角解释设计选择
-- 整理出自己的选型框架
+## 你应该怎么学
+- 先看 [study-map.md](./study-map.md)
+- 再按 [steps.md](./steps.md) 推进
+- 学习时把 [resources/](./resources/README.md) 当成主讲义
+- 把 [examples/](./examples/README.md) 当成知识点实验室
+- 把 [module-service/README.md](./module-service/README.md) 当成综合实战入口
 
-## 核心主题
-- ReAct
-- Plan-and-Execute
-- Router
-- Supervisor
-- workflow vs agent
-- memory design
-
-## 阶段产出
-- 一份心智模型文档
-- 一份模式选型表
-- 一组短文或笔记
-
-## 完成标准
-- 能把自己的项目拆成架构层次讲清楚
-- 能说清常见 agent pattern 的适用边界
-- 能解释为什么不是所有问题都要上 multi-agent
+## 这一模块学完后你应该能做到什么
+- 不只知道概念，还能解释原理、边界和失败模式
+- 不只看懂示例，还能指出哪段代码在体现哪个知识点
+- 不只跑通 example，还能完成本模块综合服务

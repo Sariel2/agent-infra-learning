@@ -1,12 +1,13 @@
 # 06 转型、简历与面试 Examples
 
-    这里放的是知识点级别的可运行示例。每个目录都能单独安装依赖、运行代码并执行测试。
+    这里不是“示例仓库目录”，而是这个模块的实验室。每个 example 都只演示一个核心知识点，并且都配了 `walkthrough.md` 告诉你该怎么看代码。
 
-    ## 示例列表
-    - `01-project-story-api`：演示如何把项目事实整理成业务版和 infra 版故事。
-- `02-interview-qa-pack`：演示如何用结构化方式组织高频面试问答。
+    ## 推荐顺序
+    - [01-project-story-api/README.md](./01-project-story-api/README.md)：项目故事生成
+- [02-interview-qa-pack/README.md](./02-interview-qa-pack/README.md)：高频问答模板
 
-    ## 使用方式
-    1. 先按 `steps.md` 的顺序挑一个示例运行。
-    2. 先跑测试，再改代码，再重新跑测试。
-    3. 把观察到的行为写进 `experiments.md`。
+    ## 使用方法
+    1. 先看每个 example 的 `README.md`
+    2. 再看 `walkthrough.md`
+    3. 先跑，再改，再重新跑
+    4. 把你的观察写进 `experiments.md`

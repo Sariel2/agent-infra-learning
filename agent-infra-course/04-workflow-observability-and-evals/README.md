@@ -1,25 +1,15 @@
 # 04 Workflow、Observability 与 Evals
 
-这一阶段是从“能跑 demo”走向“接近生产”的关键转折点。你要开始把 Agent 看成一个运行时系统，而不是一次模型调用。
+这个模块的目标是：把流程显式建模，并让运行轨迹和评测结果成为系统的一部分。
 
-## 阶段目标
-- 用 workflow 编排复杂步骤
-- 给系统加上 trace 和运行可见性
-- 建立基础 eval 体系
+## 你应该怎么学
+- 先看 [study-map.md](./study-map.md)
+- 再按 [steps.md](./steps.md) 推进
+- 学习时把 [resources/](./resources/README.md) 当成主讲义
+- 把 [examples/](./examples/README.md) 当成知识点实验室
+- 把 [module-service/README.md](./module-service/README.md) 当成综合实战入口
 
-## 核心主题
-- LangGraph 状态编排
-- tracing 与 metadata
-- failure analysis
-- eval dataset
-- latency、cost、quality 指标
-
-## 阶段产出
-- 一个 `production-like runtime`
-- 一套 trace 记录方式
-- 一组 eval case 和回归基线
-
-## 完成标准
-- 你能从 trace 里看出流程卡在哪一步
-- 你能用数据而不是感觉判断系统质量
-- 你能解释 workflow 和自由 agent 的边界
+## 这一模块学完后你应该能做到什么
+- 不只知道概念，还能解释原理、边界和失败模式
+- 不只看懂示例，还能指出哪段代码在体现哪个知识点
+- 不只跑通 example，还能完成本模块综合服务

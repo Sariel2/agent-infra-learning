@@ -1,7 +1,17 @@
-# 01 Stateful Workflow
+# 状态驱动 workflow
 
-演示状态驱动的工作流编排。
+        这个 example 用来学习：为什么固定步骤、高风险节点更适合 workflow 而不是自由 agent。
 
-## 运行
-- `python -m app.main`
+        ## 先读什么
+        - [walkthrough.md](./walkthrough.md)
+        - [../../resources/01-concepts-and-principles.md](../../resources/01-concepts-and-principles.md)
+        - [../../resources/02-deep-dive.md](../../resources/02-deep-dive.md)
+
+        ## 建议运行
+        - `python -m app.main`
 - `pytest`
+
+        ## 读完后要做什么
+        - 修改至少 1 处实现
+        - 重新运行命令验证变化
+        - 记录这次修改说明了什么原理

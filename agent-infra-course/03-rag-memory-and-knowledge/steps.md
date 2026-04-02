@@ -1,37 +1,50 @@
 # 03 RAG、Memory 与 Knowledge 逐步执行说明
 
-## Step 1：运行最小检索链路
-- 要做什么：运行最小检索链路
-- 为什么现在做：RAG 先追求链路通，再追求效果最优。
-- 具体动作：运行 examples/01-local-retrieval。
-- 产出物：可检索文档并返回引用的最小示例
-- 完成判断：你能看到 top results 与 citation。
-- 常见卡点：一开始就陷入向量库和 embedding 细节。
-- 如果卡住先检查：检查是否先从简单检索跑通。
+下面的步骤不是抽象提醒，而是本模块真正的学习顺序。每一步都对应具体讲义文件、代码文件和命令。
 
-## Step 2：记录 citation 与失败样本
-- 要做什么：记录 citation 与失败样本
-- 为什么现在做：没有引用和失败样本，后续优化无从下手。
-- 具体动作：对 5 个问题记录命中片段、答案和正确性。
-- 产出物：失败样本表
-- 完成判断：你能区分没检索到与检索到了但回答错。
-- 常见卡点：只记主观感受。
-- 如果卡住先检查：检查是否保留了检索原文。
+## Step 1：先建立概念框架
+- 先读 [resources/01-concepts-and-principles.md](./resources/01-concepts-and-principles.md)
+- 再读 [resources/05-common-mistakes.md](./resources/05-common-mistakes.md)
+- 目标：先知道这个模块解决什么问题、边界在哪里、最容易错在哪里。
+- 完成标准：你能不用看代码先讲清这个模块的核心概念。
 
-## Step 3：运行短期记忆示例
-- 要做什么：运行短期记忆示例
-- 为什么现在做：理解 memory 与 retrieval 的职责边界。
-- 具体动作：运行 examples/02-short-term-memory，观察裁剪结果。
-- 产出物：最小记忆策略
-- 完成判断：你能解释为什么不该把历史全塞回上下文。
-- 常见卡点：对话越长上下文越污染。
-- 如果卡住先检查：检查是否存在裁剪或 relevance 规则。
+## Step 2：读细节和原理
+- 读 [resources/02-deep-dive.md](./resources/02-deep-dive.md)
+- 参考 [resources/04-sources.md](./resources/04-sources.md) 中的出处链接，但不要跳出去替代教程本身
+- 目标：弄清楚这个模块背后的数据流、设计动机和失败模式。
+- 完成标准：你能解释“为什么要这样设计”，而不只是“我会用”。
 
-## Step 4：完成 knowledge-agent 服务
-- 要做什么：完成 knowledge-agent 服务
-- 为什么现在做：把检索、citation 与记忆组合成知识问答服务。
-- 具体动作：启动 module-service，导入文档，执行问答并查看 citation。
-- 产出物：knowledge-agent 服务
-- 完成判断：能基于知识答题并说明命中来源。
-- 常见卡点：只返回答案不返回证据。
-- 如果卡住先检查：检查 citation 是否在接口层显式暴露。
+## Step 3：学习 example `01-local-retrieval`
+- 先读 [examples/01-local-retrieval/README.md](./examples/01-local-retrieval/README.md)
+- 再读 [examples/01-local-retrieval/walkthrough.md](./examples/01-local-retrieval/walkthrough.md)
+- 打开 [examples/01-local-retrieval/app/main.py](./examples/01-local-retrieval/app/main.py)：先看 `Document`、`RetrievalResult`，再看 `retrieve()`。重点不是算法多高级，而是检索结果如何被结构化保留下来。
+- 打开 [examples/01-local-retrieval/tests/test_main.py](./examples/01-local-retrieval/tests/test_main.py)：看测试如何验证“排序结果是否符合预期”。
+- 建议命令：
+  - `python -m app.main`
+  - `pytest`
+- 完成标准：你至少做 1 处小改动，并能解释行为变化。
+
+## Step 4：学习 example `02-short-term-memory`
+- 先读 [examples/02-short-term-memory/README.md](./examples/02-short-term-memory/README.md)
+- 再读 [examples/02-short-term-memory/walkthrough.md](./examples/02-short-term-memory/walkthrough.md)
+- 打开 [examples/02-short-term-memory/app/main.py](./examples/02-short-term-memory/app/main.py)：先看 `ConversationMemory` 的 `deque(maxlen=limit)`，这是课程里最小的“有界记忆”模型。
+- 打开 [examples/02-short-term-memory/tests/test_main.py](./examples/02-short-term-memory/tests/test_main.py)：看测试如何验证旧记忆被淘汰。
+- 建议命令：
+  - `python -m app.main`
+  - `pytest`
+- 完成标准：你至少做 1 处小改动，并能解释行为变化。
+
+## Step 5：进入综合服务 `knowledge-agent`
+- 先读 [module-service/README.md](./module-service/README.md)
+- 打开 [module-service/app/service.py](./module-service/app/service.py)：先看 `DOCS`、`Memory`、`retrieve()` 与 `ask()`。你要看到知识、记忆和响应模型是如何被分开的。
+- 打开 [module-service/app/main.py](./module-service/app/main.py)：再看 `/ask` 路由如何只承担 HTTP 入口职责。
+- 打开 [module-service/tests/test_main.py](./module-service/tests/test_main.py)：最后看测试如何确认响应里必须包含 citation。
+- 建议命令：
+  - `uvicorn app.main:app --reload`
+  - `pytest`
+- 完成标准：你能解释这个综合服务如何把本模块知识点串起来。
+
+## Step 6：练习与复盘
+- 做 [exercises.md](./exercises.md)
+- 用 [review.md](./review.md) 做复盘
+- 完成标准：至少写下 1 条失败案例、1 条修复思路、1 条你现在能讲清楚的判断原则。

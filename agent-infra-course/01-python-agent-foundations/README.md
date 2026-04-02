@@ -1,25 +1,15 @@
 # 01 Python 与 Agent 基础
 
-这是正式进入实战的第一阶段。你的目标不是成为“Python 语法专家”，而是把 Python 学成一种能快速搭 Agent 服务、能写实验、能做封装的工程语言。
+这个模块的目标是：理解 Python-first agent 服务的最小工程结构，并完成结构化输出与 provider 抽象。
 
-## 阶段目标
-- 补齐 Agent Infra 最需要的 Python 工程能力
-- 跑通第一个 LLM API 服务
-- 完成模型调用的工程封装
+## 你应该怎么学
+- 先看 [study-map.md](./study-map.md)
+- 再按 [steps.md](./steps.md) 推进
+- 学习时把 [resources/](./resources/README.md) 当成主讲义
+- 把 [examples/](./examples/README.md) 当成知识点实验室
+- 把 [module-service/README.md](./module-service/README.md) 当成综合实战入口
 
-## 关键主题
-- Python 工程结构
-- 异步与 HTTP 调用
-- 配置管理
-- structured output
-- provider abstraction
-
-## 阶段产出
-- 一个 `llm-gateway`
-- 一个统一的模型调用层
-- 一组基础测试
-
-## 完成标准
-- 能写出最小 FastAPI 服务
-- 能调用模型并返回结构化结果
-- 能解释为什么要做 provider 层封装
+## 这一模块学完后你应该能做到什么
+- 不只知道概念，还能解释原理、边界和失败模式
+- 不只看懂示例，还能指出哪段代码在体现哪个知识点
+- 不只跑通 example，还能完成本模块综合服务

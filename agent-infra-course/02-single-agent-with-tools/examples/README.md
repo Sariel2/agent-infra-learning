@@ -1,12 +1,13 @@
 # 02 单 Agent 与 Tools Examples
 
-    这里放的是知识点级别的可运行示例。每个目录都能单独安装依赖、运行代码并执行测试。
+    这里不是“示例仓库目录”，而是这个模块的实验室。每个 example 都只演示一个核心知识点，并且都配了 `walkthrough.md` 告诉你该怎么看代码。
 
-    ## 示例列表
-    - `01-tool-schema`：演示工具定义、参数校验和统一返回。
-- `02-agent-loop`：演示最小单 agent loop 与工具调用轨迹。
+    ## 推荐顺序
+    - [01-tool-schema/README.md](./01-tool-schema/README.md)：工具契约与校验
+- [02-agent-loop/README.md](./02-agent-loop/README.md)：最小 agent loop
 
-    ## 使用方式
-    1. 先按 `steps.md` 的顺序挑一个示例运行。
-    2. 先跑测试，再改代码，再重新跑测试。
-    3. 把观察到的行为写进 `experiments.md`。
+    ## 使用方法
+    1. 先看每个 example 的 `README.md`
+    2. 再看 `walkthrough.md`
+    3. 先跑，再改，再重新跑
+    4. 把你的观察写进 `experiments.md`

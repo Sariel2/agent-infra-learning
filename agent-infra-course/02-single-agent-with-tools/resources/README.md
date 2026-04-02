@@ -1,14 +1,20 @@
-# 02 单 Agent 与 Tools 资料导航
+# 02 单 Agent 与 Tools Resources
 
-    这个模块开始进入真正的 agent 行为。重点不是把工具接上，而是让工具契约、选择、执行与失败恢复变得可控。
+这个模块的目标是：理解 tool schema、agent loop、执行轨迹与失败恢复的最小工程实现。
 
-    ## 建议顺序
-    1. OpenAI Tools Guide
-2. OpenAI Web Search Tool
-3. OpenAI Agents SDK
-4. PydanticAI
+## 建议阅读顺序
+1. [01-concepts-and-principles.md](./01-concepts-and-principles.md)
+2. [02-deep-dive.md](./02-deep-dive.md)
+3. [03-code-reading-guide.md](./03-code-reading-guide.md)
+4. [05-common-mistakes.md](./05-common-mistakes.md)
+5. [04-sources.md](./04-sources.md)
 
-    ## 使用方式
-    - 先读 `concepts-summary.md`，快速建立关键词地图。
-    - 再读 `key-resources.md`，理解每份资料为什么值得看。
-    - 最后按 `reading-notes.md` 的节奏去读、记、跑示例。
+## 这些文件分别解决什么问题
+- `01-concepts-and-principles.md`：告诉你概念是什么、为什么存在、边界在哪里。
+- `02-deep-dive.md`：告诉你这个模块背后的原理、数据流、设计动机和常见失败模式。
+- `03-code-reading-guide.md`：告诉你该先看哪个 example、哪个文件、哪段逻辑。
+- `04-sources.md`：给出原始出处链接和用途说明。
+- `05-common-mistakes.md`：把常见误区、症状和修复方式单独拉出来。
+
+## 使用原则
+先把 `01` 和 `02` 当成讲义读懂，再去看代码；不要把外部链接当作主要学习入口。

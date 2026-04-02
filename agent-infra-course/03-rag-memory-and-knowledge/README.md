@@ -1,26 +1,15 @@
 # 03 RAG、Memory 与 Knowledge
 
-这一阶段要把 Agent 从“会调用函数”升级成“能基于外部知识可靠工作”。重点不只是调通向量库，而是理解知识管道、检索质量和记忆边界。
+这个模块的目标是：理解检索、citation、memory 的边界，并做出一个可解释的知识问答服务。
 
-## 阶段目标
-- 跑通一条完整 RAG 链路
-- 理解 hosted retrieval 和 self-hosted retrieval 的区别
-- 给 Agent 加上最小可用的对话记忆
+## 你应该怎么学
+- 先看 [study-map.md](./study-map.md)
+- 再按 [steps.md](./steps.md) 推进
+- 学习时把 [resources/](./resources/README.md) 当成主讲义
+- 把 [examples/](./examples/README.md) 当成知识点实验室
+- 把 [module-service/README.md](./module-service/README.md) 当成综合实战入口
 
-## 核心主题
-- chunking
-- embedding
-- indexing
-- retrieval
-- citation
-- short-term memory
-
-## 阶段产出
-- 一个 `knowledge-agent`
-- 一套资料导入和检索流程
-- 一份检索失败分析
-
-## 完成标准
-- 回答可以引用知识来源
-- 你能解释为什么某些问题检索效果差
-- 你能区分 memory 和 retrieval 的职责
+## 这一模块学完后你应该能做到什么
+- 不只知道概念，还能解释原理、边界和失败模式
+- 不只看懂示例，还能指出哪段代码在体现哪个知识点
+- 不只跑通 example，还能完成本模块综合服务
