@@ -1,18 +1,39 @@
-# 项目状态与 smoke test 代码导读
+# 项目状态与 Smoke Test 逐段读码讲义
 
-这个 example 的核心目的：为什么学习项目也需要最小验证机制。
+这个实验在训练一种很重要的工程意识：项目不是“能跑一次”就叫准备好了，而是要有最小状态确认机制。
 
-## 阅读顺序
-- 先看 [app/main.py](./app/main.py)：看 `ProjectStatus` 与 `summarize_status`，理解“能运行”和“已准备好”不是一回事。
-- 先看 [tests/test_main.py](./tests/test_main.py)：看 smoke test 如何把学习状态转成明确检查项。
+## 先读前你要带着的问题
+- 什么叫项目“已就绪”。
+- 为什么 smoke test 值得在课程一开始就出现。
+- 这套最小状态确认会如何迁移到综合服务。
+
+## 第 1 步：先看状态模型
+- 文件：[app/main.py](./app/main.py)
+- 先看：`ProjectStatus`
+- 重点理解：这不是业务模型，而是“学习项目当前状态”的显式描述。后面所有模块都在重复这种“把状态先对象化”的动作。
+
+## 第 2 步：再看状态汇总函数
+- 文件：[app/main.py](./app/main.py)
+- 先看：`summarize_status`
+- 重点理解：它把多个检查项压缩成一个可判断的总结结果，这就是后面课程里很多 runtime 汇总逻辑的雏形。
+
+## 第 3 步：回到测试看最小验收
+- 文件：[tests/test_main.py](./tests/test_main.py)
+- 重点理解：smoke test 的价值不是覆盖细节，而是快速确认系统是不是处在“值得继续往下做”的状态。
+- 读完后你应该能回答：为什么 smoke test 往往比复杂集成测试更适合放在最前面。
 
 ## 建议运行命令
 - `python -m app.main`
 - `pytest`
 
-## 建议实验
-- 把 `project_defined` 改成 `False`，确认状态如何变化。
+## 建议最小实验
+- 把 `project_defined` 改成 `False`，看状态如何变化。
+- 增加一个检查项，看看汇总逻辑和测试如何同步变化。
+
+## 最后把抽象迁回哪里
+- 综合服务：[../../module-service/app/service.py](../../module-service/app/service.py)
+- 对应抽象：就绪状态汇总与最小健康检查
 
 ## 学完后你应该能回答
-- 这个 example 为什么存在，它在整个模块里对应哪个关键知识点。
-- 如果把这个 example 的抽象迁移到 `starter-workspace`，会迁移到哪一层。
+- 为什么项目准备状态也值得被建模。
+- 为什么 smoke test 是课程里最早要建立的验证习惯之一。

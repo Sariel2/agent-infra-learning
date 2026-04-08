@@ -1,5 +1,20 @@
 # Agent Infra Final Exam
 
+## 使用方式
+- 建议在完成全部 7 个模块后再做。
+- 考试不是单纯背概念，推荐边答题边回链模块讲义、example 和 module-service。
+- 做题顺序建议：选择题与判断题 -> 简答题 -> 场景分析题 -> 系统设计题 -> 项目讲解题。
+
+## 做题前回看
+- 课程总览：[../README.md](../README.md)
+- 模块 1：[../01-python-agent-foundations/README.md](../01-python-agent-foundations/README.md)
+- 模块 2：[../02-single-agent-with-tools/README.md](../02-single-agent-with-tools/README.md)
+- 模块 3：[../03-rag-memory-and-knowledge/README.md](../03-rag-memory-and-knowledge/README.md)
+- 模块 4：[../04-workflow-observability-and-evals/README.md](../04-workflow-observability-and-evals/README.md)
+- 模块 5：[../05-agent-theory-and-architecture/README.md](../05-agent-theory-and-architecture/README.md)
+- 模块 6：[../06-career-transition-and-interview/README.md](../06-career-transition-and-interview/README.md)
+- 评分标准：[scoring-rubric.md](./scoring-rubric.md)
+
 ## 一、选择题
 1. 在 agent infra 中，最适合承接“显式步骤与条件分支”的能力是：
 A. Prompt 模板
@@ -67,3 +82,10 @@ D. 自动生成前端页面
 ## 六、项目讲解题
 20. 用 3 分钟口径讲述你做的 `agent-runtime` 项目，至少覆盖目标、架构、失败案例、优化收益。
 21. 把你的课程主项目写成 2 条适合简历的项目描述，一条偏业务价值，一条偏 infra 能力。
+
+## 答题建议
+- 选择题和判断题不要只写答案，最好顺手写一句理由。
+- 简答题至少引用一个模块讲义或一个项目例子。
+- 场景题要有排查顺序，不能只给概念名词。
+- 系统设计题至少写出模块边界、失败恢复和测试思路。
+- 项目讲解题要基于你课程里真的做过的服务，而不是泛泛而谈。
